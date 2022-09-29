@@ -20,9 +20,11 @@ public class JpaMain {
 
         try {
           // 입력
-         /* Member member = new Member();
-          member.setId(2L);
-          member.setName("HelloB");*/
+          Member member = new Member();
+          member.setId("A");
+          member.setName1("HelloB");
+
+          em.persist(member);
 
           //조회
           //JPQL 객체지향 쿼리
@@ -31,13 +33,13 @@ public class JpaMain {
                  .setMaxResults(8)
                  .getResultList();
 
-         for(Member member : result){
-           System.out.println("member = " + member.getName());
+         /*for(Member member : result){
+           System.out.println("member = " + member.getName1());
          }
-
+*/
           //수정
-          Member findMember = em.find(Member.class, 1L);
-          findMember.setName("Hello Update");
+         // Member findMember = em.find(Member.class, 1L);
+         // findMember.setName1("Hello Update");
           //em.persist(findMember); -> 수정시에는 필요 없음
 
           // em.remove(findMember); 삭제
@@ -47,7 +49,7 @@ public class JpaMain {
             //em.detach(member); //영속성 컨텍스트 관리x / 특정 엔티티만 준영속 상태로 전환
 
            /*  비영속
-          속Member member = new Member();
+          Member member = new Member();
             member.setId(100L);*/
 
 
